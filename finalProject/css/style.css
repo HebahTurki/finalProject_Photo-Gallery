@@ -1,0 +1,58 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+
+    padding: 20px;
+    border: 2px solid #ddd;
+    text-align: center;
+}
+
+@media screen and (min-width: 772px ) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    figure {
+        padding: 20px;
+        border: 1px solid #ddd;
+        text-align: center;
+        border-radius: 50%;
+    }
+    figure:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #222;
+        color: #ffd700;
+        border-color: #000;
+    }
+}
